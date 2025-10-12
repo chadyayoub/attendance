@@ -121,7 +121,7 @@ reportBtn.addEventListener("click", async () => {
   }
 
   if (absentNames.length) {
-    if(!selectedTime || (selectedTime !== "6PM" || selectedTime !== "10PM"))
+    if(!selectedTime || (selectedTime !== "6PM" && selectedTime !== "10PM"))
     report += `${absentNames.join("\n")}`;
   }
 
