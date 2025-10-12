@@ -1,0 +1,340 @@
+/* ===== CSS Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Root Variables ===== */
+:root {
+  --primary-color: #2b7a78;
+  --secondary-color: #def2f1;
+  --text-color: #17252a;
+  --background-color: #ffffff;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --checked-online: #3aafa9;
+  --checked-physical: #ffb347;
+}
+
+/* ===== Global Layout ===== */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+/* ===== Header Title ===== */
+#page-title {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  border-top: 1px solid #ccc;
+  width: 100%;
+}
+
+/* ===== Table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  word-wrap: break-word;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 0;
+  vertical-align: middle;
+  position: relative;
+}
+
+/* Name column */
+.name-cell,
+th:first-child {
+  width: 50%;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Checkbox columns */
+th:nth-child(2),
+th:nth-child(3),
+td:nth-child(2),
+td:nth-child(3) {
+  width: 25%;
+  height: 48px;
+}
+
+/* Header */
+th {
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Alternate row backgrounds */
+tr:nth-child(even) {
+  background-color: var(--secondary-color);
+}
+
+/* ===== Checkbox wrapper and fill ===== */
+.checkbox-cell {
+  padding: 0;
+}
+
+.checkbox-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.checkbox-wrapper .checkbox-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.18s ease, transform 0.12s ease;
+  z-index: 1;
+}
+
+.checkbox-wrapper:hover .checkbox-fill {
+  background-color: rgba(0,0,0,0.03);
+}
+
+td:nth-child(2) .checkbox-wrapper input[type="checkbox"]:checked + .checkbox-fill {
+  background-color: var(--checked-online);
+}
+
+td:nth-child(3) .checkbox-wrapper input[type="checkbox"]:checked + .checkbox-fill {
+  background-color: var(--checked-physical);
+}
+
+.checkbox-wrapper input[type="checkbox"]:active + .checkbox-fill {
+  transform: scale(0.995);
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .checkbox-fill::after {
+  content: "✓";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+  font-size: 1.1rem;
+}
+
+/* ===== Report Section (Input + Button) ===== */
+.report-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+#meeting-name {
+  flex: 1;
+  max-width: 300px;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+#meeting-name:focus {
+  border-color: var(--checked-online);
+}
+
+#meeting-name::placeholder {
+  color: #888;
+}
+
+#report-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.55rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#report-btn:hover {
+  background-color: var(--checked-online);
+}
+
+#report-btn:active {
+  transform: scale(0.98);
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.9rem;
+  }
+
+  .name-cell,
+  th:first-child {
+    width: 45%;
+    font-size: 0.85rem;
+  }
+
+  th:nth-child(2),
+  th:nth-child(3),
+  td:nth-child(2),
+  td:nth-child(3) {
+    width: 27.5%;
+  }
+
+  td:nth-child(2),
+  td:nth-child(3) {
+    height: 44px;
+  }
+
+  #page-title {
+    font-size: 1.2rem;
+  }
+
+  #meeting-name {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  table {
+    font-size: 0.85rem;
+  }
+
+  td:nth-child(2),
+  td:nth-child(3) {
+    height: 42px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+
+  #meeting-name {
+    max-width: 180px;
+    font-size: 0.9rem;
+  }
+
+  #report-btn {
+    padding: 0.45rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== Input Error State ===== */
+#meeting-name.error {
+  border-color: red;
+  background-color: #ffecec;
+}
+
+#meeting-name.error::placeholder {
+  color: red;
+}
+
+.copy-notice {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+  z-index: 9999;
+  animation: fadeInOut 2.5s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, 20px); }
+  10%, 90% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, 20px); }
+}
+
+.report-section label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.report-section input.time-slot {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.time-section {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.time-section label {
+  font-weight: 500;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.time-section input[type="checkbox"] {
+  margin-right: 0.35rem;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.time-checkbox.error + span,
+.time-section input[type="checkbox"].error {
+  outline: 2px solid red;
+  border-radius: 4px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendance</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <main>
+    <section>
+      <!-- Title above table -->
+      <h2 id="page-title">Attendance</h2>
+
+      <table id="attendance-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Online</th>
+            <th>Physical</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- JavaScript will add rows here -->
+        </tbody>
+      </table>
+
+      <!-- Meeting name input + report button -->
+      <div class="report-section">
+        <input 
+          type="text" 
+          id="meeting-name" 
+          placeholder="Meeting name" 
+        />
+        <div class="time-section">
+          <label><input type="checkbox" class="time-checkbox" value="10AM"> 10AM</label>
+          <label><input type="checkbox" class="time-checkbox" value="11:40AM"> 11:40AM</label>
+          <label><input type="checkbox" class="time-checkbox" value="6PM"> 6PM</label>
+          <label><input type="checkbox" class="time-checkbox" value="10PM"> 10PM</label>
+        </div>
+        <button id="report-btn">Report</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Attendance App</p>
+  </footer>
+
+</body>
+</html>
