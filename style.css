@@ -162,18 +162,33 @@ td:nth-child(3) .checkbox-wrapper input[type="checkbox"]:checked + .checkbox-fil
   font-size: 1.1rem;
 }
 
-/* ===== Report Section (Input + Button) ===== */
-.report-section {
+/* ===== Controls Section (Time + Meeting + Button) ===== */
+.controls {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  margin-top: 1rem;
+  gap: 1.5rem; 
+  margin-top: 1.5rem;
+}
+
+
+.controls label {
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.controls input[type="radio"] {
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 #meeting-name {
-  flex: 1;
-  max-width: 300px;
+  flex: 1 1 180px;
+  min-width: 140px;
   padding: 0.5rem 0.75rem;
   border: 2px solid var(--primary-color);
   border-radius: 8px;
@@ -210,6 +225,38 @@ td:nth-child(3) .checkbox-wrapper input[type="checkbox"]:checked + .checkbox-fil
   transform: scale(0.98);
 }
 
+/* ===== Input Error State ===== */
+#meeting-name.error {
+  border-color: red;
+  background-color: #ffecec;
+}
+
+#meeting-name.error::placeholder {
+  color: red;
+}
+
+/* ===== Copy Notice ===== */
+.copy-notice {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+  z-index: 9999;
+  animation: fadeInOut 2.5s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, 20px); }
+  10%, 90% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, 20px); }
+}
+
 /* ===== Responsive Adjustments ===== */
 @media (max-width: 768px) {
   table {
@@ -243,98 +290,30 @@ td:nth-child(3) .checkbox-wrapper input[type="checkbox"]:checked + .checkbox-fil
   }
 }
 
-@media (max-width: 480px) {
-  table {
-    font-size: 0.85rem;
+/* ===== Mobile Optimization ===== */
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    gap: 2rem; /* More vertical gap on mobile for better spacing */
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
-  td:nth-child(2),
-  td:nth-child(3) {
-    height: 42px;
-  }
-
-  footer {
-    font-size: 0.8rem;
+  .controls label,
+  #meeting-name,
+  #report-btn {
+    width: 100%;
+    max-width: 320px; 
+    text-align: center;
   }
 
   #meeting-name {
-    max-width: 180px;
-    font-size: 0.9rem;
+    text-align: center;
+    padding: 0.65rem 0.9rem;
   }
 
   #report-btn {
-    padding: 0.45rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.75rem 0;
+    font-size: 1.05rem;
   }
-}
-
-/* ===== Input Error State ===== */
-#meeting-name.error {
-  border-color: red;
-  background-color: #ffecec;
-}
-
-#meeting-name.error::placeholder {
-  color: red;
-}
-
-.copy-notice {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--primary-color);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  font-size: 0.9rem;
-  z-index: 9999;
-  animation: fadeInOut 2.5s ease forwards;
-}
-
-@keyframes fadeInOut {
-  0% { opacity: 0; transform: translate(-50%, 20px); }
-  10%, 90% { opacity: 1; transform: translate(-50%, 0); }
-  100% { opacity: 0; transform: translate(-50%, 20px); }
-}
-
-.report-section label {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.report-section input.time-slot {
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-}
-
-.time-section {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.time-section label {
-  font-weight: 500;
-  color: var(--text-color);
-  cursor: pointer;
-}
-
-.time-section input[type="checkbox"] {
-  margin-right: 0.35rem;
-  width: 1rem;
-  height: 1rem;
-  cursor: pointer;
-}
-
-.time-checkbox.error + span,
-.time-section input[type="checkbox"].error {
-  outline: 2px solid red;
-  border-radius: 4px;
 }
