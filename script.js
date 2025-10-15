@@ -21,6 +21,12 @@ names.forEach((name) => {
     </td>
     <td class="checkbox-cell">
       <label class="checkbox-wrapper">
+        <input type="checkbox" class="cam-checkbox" />
+        <span class="checkbox-fill" aria-hidden="true"></span>
+      </label>
+    </td>
+    <td class="checkbox-cell">
+      <label class="checkbox-wrapper">
         <input type="checkbox" class="physical-checkbox" />
         <span class="checkbox-fill" aria-hidden="true"></span>
       </label>
@@ -30,16 +36,36 @@ names.forEach((name) => {
   tableBody.appendChild(row);
 });
 
-// Prevent both boxes from being checked at the same time in a row
+// ===== Checkbox Linking Logic =====
 tableBody.addEventListener("change", (e) => {
   const row = e.target.closest("tr");
   if (!row) return;
 
   const online = row.querySelector(".online-checkbox");
+  const cam = row.querySelector(".cam-checkbox");
   const physical = row.querySelector(".physical-checkbox");
 
-  if (e.target === online && online.checked) physical.checked = false;
-  else if (e.target === physical && physical.checked) online.checked = false;
+  // Checking Online unchecks Physical
+  if (e.target === online && online.checked) {
+    physical.checked = false;
+  }
+
+  // Unchecking Online unchecks Cam
+  if (e.target === online && !online.checked) {
+    cam.checked = false;
+  }
+
+  // Checking Cam auto-checks Online and unchecks Physical
+  if (e.target === cam && cam.checked) {
+    online.checked = true;
+    physical.checked = false;
+  }
+
+  // Checking Physical unchecks Online and Cam
+  if (e.target === physical && physical.checked) {
+    online.checked = false;
+    cam.checked = false;
+  }
 });
 
 // ===== Time Selection =====
@@ -63,7 +89,6 @@ reportBtn.addEventListener("click", async () => {
   const meetingName = meetingInput.value.trim();
   const selectedTime = Array.from(timeCheckboxes).find(cb => cb.checked)?.value || null;
 
-  // Meeting name required
   if (!meetingName) {
     meetingInput.classList.add("error");
     meetingInput.placeholder = "Please enter a meeting name";
@@ -77,25 +102,26 @@ reportBtn.addEventListener("click", async () => {
   const onlineNames = [];
   const absentNames = [];
 
-  // Collect attendance data
   document.querySelectorAll("#attendance-table tbody tr").forEach((row) => {
     const name = row.querySelector(".name-cell").textContent;
     const online = row.querySelector(".online-checkbox").checked;
+    const cam = row.querySelector(".cam-checkbox").checked;
     const physical = row.querySelector(".physical-checkbox").checked;
 
     if (physical) physicalNames.push(`✅ ${name}`);
-    else if (online) onlineNames.push(`✅ ${name}`);
-    else absentNames.push(`- ${name}`);
+    else if (online) {
+      onlineNames.push(cam ? `✅ 📸 ${name}` : `✅ ${name}`);
+    } else {
+      absentNames.push(`- ${name}`);
+    }
   });
 
-  // Date formatting
   const now = new Date();
   const yearOffset = now.getFullYear() - 1983;
   const month = String(now.getMonth() + 1).padStart(2, "0");
   const day = String(now.getDate()).padStart(2, "0");
   const formattedDate = `${yearOffset}${month}${day}`;
 
-  // ===== Build Report =====
   let report = "";
 
   if (selectedTime) {
@@ -105,7 +131,6 @@ reportBtn.addEventListener("click", async () => {
       report += "\n";
     }
   } else {
-    // No time selected — behave as before
     report += `**${meetingName} ${formattedDate}**\n\n`;
   }
 
@@ -116,16 +141,15 @@ reportBtn.addEventListener("click", async () => {
 
   if (onlineNames.length) {
     if(selectedTime) report += `**${selectedTime}**\n`;
-    if(physicalNames.length) report += "**Online:**\n"
+    report += "**Online:**\n";
     report += `${onlineNames.join("\n")}\n\n`;
   }
 
   if (absentNames.length) {
-    if(!selectedTime || (selectedTime !== "6PM" && selectedTime !== "10PM"))
-    report += `${absentNames.join("\n")}`;
+    if(!selectedTime || (selectedTime !== "5PM" && selectedTime !== "6PM" && selectedTime !== "10PM"))
+      report += `${absentNames.join("\n")}`;
   }
 
-  // ===== Copy to clipboard =====
   try {
     await navigator.clipboard.writeText(report);
 
