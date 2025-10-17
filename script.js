@@ -139,9 +139,9 @@ reportBtn.addEventListener("click", async () => {
     report += `**Physical:**\n${physicalNames.join("\n")}\n\n`;
   }
 
-  if (onlineNames.length && physicalNames.length) {
+  if (onlineNames.length) {
     if(selectedTime) report += `**${selectedTime}**\n`;
-    report += "**Online:**\n";
+    if(physicalNames.length) report += "**Online:**\n";
     report += `${onlineNames.join("\n")}\n\n`;
   }
 
