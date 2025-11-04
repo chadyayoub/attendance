@@ -78,6 +78,36 @@ th:first-child {
   font-weight: 500;
 }
 
+/* Dropdown in header */
+th:first-child #name-dropdown {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+th:first-child #name-dropdown:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+th:first-child #name-dropdown:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+th:first-child #name-dropdown option {
+  background-color: var(--primary-color);
+  color: white;
+}
+
 th:nth-child(2),
 th:nth-child(3),
 th:nth-child(4),
