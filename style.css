@@ -78,32 +78,39 @@ th:first-child {
   font-weight: 500;
 }
 
-/* Dropdown in header */
-th:first-child #name-dropdown {
-  width: 100%;
+/* Dropdown container in header */
+.dropdown-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+th:first-child select {
+  flex: 1;
+  min-width: 50px;
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   padding: 0.4rem 0.5rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
   outline: none;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-th:first-child #name-dropdown:hover {
+th:first-child select:hover {
   background-color: rgba(255, 255, 255, 0.25);
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-th:first-child #name-dropdown:focus {
+th:first-child select:focus {
   background-color: rgba(255, 255, 255, 0.3);
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-th:first-child #name-dropdown option {
+th:first-child select option {
   background-color: var(--primary-color);
   color: white;
 }

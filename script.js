@@ -1,58 +1,94 @@
 // ===== Names List =====
 const g1 = [
-  { name: "AA", team: "T2",  },
-  { name: "Carbz", team: "T4", },
-  { name: "Celine AC", team: "T1" },
-  { name: "Chady", team: "T4"   },
-  { name: "Christelle", team: "T2" },
-  { name: "Christy", team: "G1" },
-  { name: "Cinderella", team: "T1" },
-  { name: "Clara", team: "T3" },
-  { name: "Claude", team: "T4" },
-  { name: "EG", team: "T4" },
-  { name: "Elias S", team: "T1" },
-  { name: "Elie Keyrouz", team: "T2" },
-  { name: "Elie Khoury", team: "T3" },
-  { name: "Georgina", team: "T1" },
-  { name: "Helena", team: "T3" },
-  { name: "Jean", team: "T3" },
-  { name: "John", team: "T4" },
-  { name: "Karen", team: "T1" },
-  { name: "Laeticia", team: "T2" },
-  { name: "Lara", team: "T3" },
-  { name: "Lynn R", team: "T2" },
-  { name: "Maria D", team: "T2" },
-  { name: "Mariam", team: "T1" },
-  { name: "Marie Josée", team: "T2" },
-  { name: "Mario", team: "T3" },
-  { name: "Markella", team: "T1" },
-  { name: "Marylin", team: "T1" },
-  { name: "May", team: "T4" },
-  { name: "Raphael", team: "T1" },
-  { name: "Rebeka", team: "T3" },
-  { name: "Reine", team: "T4" },
-  { name: "Tonia", team: "T3" },
-  { name: "Yara", team: "T2" }
+  { name: "AA", team: "T2", group: "G1" },
+  { name: "Carbz", team: "T4", group: "G1" },
+  { name: "Celine AC", team: "T1", group: "G1" },
+  { name: "Chady", team: "T4", group: "G1" },
+  { name: "Christelle", team: "T2", group: "G1" },
+  { name: "Christy", team: "", group: "G1" },
+  { name: "Cinderella", team: "T1", group: "G1" },
+  { name: "Clara", team: "T3", group: "G1" },
+  { name: "Claude", team: "T4", group: "G1" },
+  { name: "EG", team: "T4", group: "G1" },
+  { name: "Elias S", team: "T1", group: "G1" },
+  { name: "Elie Keyrouz", team: "T2", group: "G1" },
+  { name: "Elie Khoury", team: "T3", group: "G1" },
+  { name: "Georgina", team: "T1", group: "G1" },
+  { name: "Helena", team: "T3", group: "G1" },
+  { name: "Jean", team: "T3", group: "G1" },
+  { name: "John", team: "T4", group: "G1" },
+  { name: "Karen", team: "T1", group: "G1" },
+  { name: "Laeticia", team: "T2", group: "G1" },
+  { name: "Lara", team: "T3", group: "G1" },
+  { name: "Lynn R", team: "T2", group: "G1" },
+  { name: "Maria D", team: "T2", group: "G1" },
+  { name: "Mariam", team: "T1", group: "G1" },
+  { name: "Marie Josée", team: "T2", group: "G1" },
+  { name: "Mario", team: "T3", group: "G1" },
+  { name: "Markella", team: "T1", group: "G1" },
+  { name: "Marylin", team: "T1", group: "G1" },
+  { name: "May", team: "T4", group: "G1" },
+  { name: "Raphael", team: "T1", group: "G1" },
+  { name: "Rebeka", team: "T3", group: "G1" },
+  { name: "Reine", team: "T4", group: "G1" },
+  { name: "Tonia", team: "T3", group: "G1" },
+  { name: "Yara", team: "T2", group: "G1" }
 ];
 
-let selectedTeam;
+const g8 = [
+  // T1
+  { name: "Elissa", team: "T1", group: "G8" },
+  { name: "Hiba", team: "T1", group: "G8" },
+  { name: "Mario", team: "T1", group: "G8" },
+  { name: "Pascal", team: "T1", group: "G8" },
+  { name: "Chady", team: "T1", group: "G8" },
+  // T2
+  { name: "Hayat", team: "T2", group: "G8" },
+  { name: "Tony", team: "T2", group: "G8" },
+  { name: "Tonia", team: "T2", group: "G8" },
+  { name: "Myriam", team: "T2", group: "G8" },
+  { name: "Elio", team: "T2", group: "G8" },
+  { name: "Carmen", team: "T2", group: "G8" },
+  // T3
+  { name: "Rita H", team: "T3", group: "G8" },
+  { name: "Joelle N", team: "T3", group: "G8" },
+  { name: "Lewis", team: "T3", group: "G8" },
+  { name: "Cynthia", team: "T3", group: "G8" },
+  { name: "Nour", team: "T3", group: "G8" },
+  { name: "Alessandro", team: "T3", group: "G8" },
+  // T4
+  { name: "Rita M", team: "T4", group: "G8" },
+  { name: "Sandy", team: "T4", group: "G8" },
+  { name: "Engy", team: "T4", group: "G8" },
+  { name: "Merna", team: "T4", group: "G8" },
+  { name: "Mamdouh", team: "T4", group: "G8" },
+  { name: "Fady", team: "T4", group: "G8" },
+  { name: "Madone", team: "T4", group: "G8" },
+  { name: "Simone", team: "T4", group: "G8" }
+];
+
+// Combined data
+const allPeople = [...g1, ...g8];
+
+let selectedTeam = "ALL";
 let selectedGroup = "G1";
 let selectedNames = [...g1.map(person => person.name)];
 
 const tableBody = document.querySelector("#attendance-table tbody");
-const nameDropdown = document.getElementById("name-dropdown");
+const groupDropdown = document.getElementById("group-dropdown");
+const teamDropdown = document.getElementById("team-dropdown");
 
-// Function to render table based on filter
-function renderTable(filter = "G1") {
+// Function to render table based on group and team filters
+function renderTable() {
   // Clear existing rows
   tableBody.innerHTML = "";
   
-  // Filter people based on selection
-  let filteredPeople;
-  if (filter === "G1") {
-    filteredPeople = g1; // Show all
-  } else {
-    filteredPeople = g1.filter(person => person.team === filter);
+  // Filter people based on group first
+  let filteredPeople = allPeople.filter(person => person.group === selectedGroup);
+  
+  // Then filter by team if not "ALL"
+  if (selectedTeam !== "ALL") {
+    filteredPeople = filteredPeople.filter(person => person.team === selectedTeam);
   }
   
   // Update selectedNames
@@ -89,23 +125,18 @@ function renderTable(filter = "G1") {
 }
 
 // Initial render
-renderTable("G1");
+renderTable();
 
-// Dropdown change event
-nameDropdown.addEventListener("change", (e) => {
-  const selectedValue = e.target.value;
-  
-  // Map option values to filter values
-  const filterMap = {
-    "option1": "G1",
-    "option2": "T1",
-    "option3": "T2",
-    "option4": "T3",
-    "option5": "T4"
-  };
-  
-  const filter = filterMap[selectedValue] || "G1";
-  renderTable(filter);
+// Group dropdown change event
+groupDropdown.addEventListener("change", (e) => {
+  selectedGroup = e.target.value;
+  renderTable();
+});
+
+// Team dropdown change event
+teamDropdown.addEventListener("change", (e) => {
+  selectedTeam = e.target.value;
+  renderTable();
 });
 
 // ===== Checkbox Linking Logic =====
