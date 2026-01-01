@@ -91,6 +91,9 @@ function renderTable() {
     filteredPeople = filteredPeople.filter(person => person.team === selectedTeam);
   }
   
+  // Sort alphabetically by name (ascending)
+  filteredPeople.sort((a, b) => a.name.localeCompare(b.name));
+  
   // Update selectedNames
   selectedNames = filteredPeople.map(person => person.name);
   
