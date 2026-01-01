@@ -36,6 +36,7 @@ const g1 = [
 ];
 
 const g8 = [
+  {name: "Pierre", team: "G8", group: "G8"},
   // T1
   { name: "Elissa", team: "T1", group: "G8" },
   { name: "Hiba", team: "T1", group: "G8" },
@@ -70,13 +71,38 @@ const g8 = [
 // Combined data
 const allPeople = [...g1, ...g8];
 
+// ===== localStorage Helpers =====
+function saveToStorage(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (err) {
+    console.error("Failed to save to localStorage:", err);
+  }
+}
+
+function getFromStorage(key) {
+  try {
+    const value = localStorage.getItem(key);
+    return value;
+  } catch (err) {
+    console.error("Failed to get from localStorage:", err);
+    return null;
+  }
+}
+
+// Load saved group from localStorage or default to G1
+const savedGroup = getFromStorage("selectedGroup") || "G1";
+
 let selectedTeam = "ALL";
-let selectedGroup = "G1";
-let selectedNames = [...g1.map(person => person.name)];
+let selectedGroup = savedGroup;
+let selectedNames = [];
 
 const tableBody = document.querySelector("#attendance-table tbody");
 const groupDropdown = document.getElementById("group-dropdown");
 const teamDropdown = document.getElementById("team-dropdown");
+
+// Set dropdown to saved value
+groupDropdown.value = savedGroup;
 
 // Function to render table based on group and team filters
 function renderTable() {
@@ -133,6 +159,7 @@ renderTable();
 // Group dropdown change event
 groupDropdown.addEventListener("change", (e) => {
   selectedGroup = e.target.value;
+  saveToStorage("selectedGroup", selectedGroup);
   renderTable();
 });
 
