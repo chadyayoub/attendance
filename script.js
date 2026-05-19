@@ -1,38 +1,39 @@
 // ===== Names List =====
 const g1 = [
-  {name: "Christy", team: "G1", group: "G1"},
+  {name: "Yara", team: "G1", group: "G1"},
   // T1
   { name: "Jana", team: "T1", group: "G1" },
-  { name: "Thalia", team: "T1", group: "G1" },
+  { name: "Cinderella", team: "T1", group: "G1" },
   { name: "Karen", team: "T1", group: "G1" },
-  { name: "Clara C", team: "T1", group: "G1" },
+  { name: "Elias S", team: "T1", group: "G1" },
   { name: "Clara D", team: "T1", group: "G1" },
-  { name: "Roy", team: "T1", group: "G1" },
-  { name: "Jean", team: "T1", group: "G1" },
+  { name: "Peter A", team: "T1", group: "G1" },
+  { name: "Joe Elias", team: "T1", group: "G1" },
   // T2
-  { name: "Yara", team: "T2", group: "G1" },
-  { name: "Elie K", team: "T2", group: "G1" },
+  { name: "Ariana", team: "T2", group: "G1" },
+  { name: "Roy D", team: "T2", group: "G1" },
+  { name: "Raphael", team: "T2", group: "G1" },
   { name: "May", team: "T2", group: "G1" },
-  { name: "Peter A", team: "T2", group: "G1" },
+  { name: "Mariam", team: "T2", group: "G1" },
   { name: "Maria D", team: "T2", group: "G1" },
-  { name: "Lynn R", team: "T2", group: "G1" },
-  { name: "Celine AC", team: "T2", group: "G1" },
+  { name: "Georgina", team: "T2", group: "G1" },
   // T3
-  { name: "Marilyn", team: "T3", group: "G1" },
-  { name: "Elias S", team: "T3", group: "G1" },
-  { name: "Mariam", team: "T3", group: "G1" },
-  { name: "Cinderella", team: "T3", group: "G1" },
-  { name: "Reine", team: "T3", group: "G1" },
-  { name: "Helena", team: "T3", group: "G1" },
-  { name: "Georgina", team: "T3", group: "G1" },
+  { name: "Johnny", team: "T3", group: "G1" },
+  { name: "Charbz", team: "T3", group: "G1" },
+  { name: "Amir", team: "T3", group: "G1" },
+  { name: "Elie K", team: "T3", group: "G1" },
+  { name: "Clara C", team: "T3", group: "G1" },
+  { name: "Jean", team: "T3", group: "G1" },
+  { name: "Rebecca", team: "T3", group: "G1" },
+  { name: "Nate", team: "T3", group: "G1" },
   // T4
-  { name: "Nicolas", team: "T4", group: "G1" },
-  { name: "Carbz", team: "T4", group: "G1" },
-  { name: "Nathan", team: "T4", group: "G1" },
-  { name: "Rebeka", team: "T4", group: "G1" },
-  { name: "Raph", team: "T4", group: "G1" },
-  { name: "Amir", team: "T4", group: "G1" },
-  { name: "Markella", team: "T4", group: "G1" }
+  { name: "Jessy", team: "T4", group: "G1" },
+  { name: "Celine Ac", team: "T4", group: "G1" },
+  { name: "Reine", team: "T4", group: "G1" },
+  { name: "Thalia", team: "T4", group: "G1" },
+  { name: "Lynn R", team: "T4", group: "G1" },
+  { name: "Marilyn", team: "T4", group: "G1" },
+  { name: "Helena", team: "T4", group: "G1" }
 ];
 
 const g8 = [
