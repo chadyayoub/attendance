@@ -37,10 +37,10 @@ const g1 = [
 ];
 
 const g8 = [
-  {name: "Pierre", team: "G8", group: "G8"},
+  {name: "Elias B", team: "G8", group: "G8"},
   // T1
   { name: "Elissa", team: "T1", group: "G8" },
-  { name: "Hiba", team: "T1", group: "G8" },
+  { name: "Joseph", team: "T1", group: "G8" },
   { name: "Mario", team: "T1", group: "G8" },
   { name: "Pascal", team: "T1", group: "G8" },
   { name: "Chady", team: "T1", group: "G8" },
@@ -52,21 +52,17 @@ const g8 = [
   { name: "Elio", team: "T2", group: "G8" },
   { name: "Carmen", team: "T2", group: "G8" },
   // T3
-  { name: "Rita H", team: "T3", group: "G8" },
+  { name: "Rita S", team: "T3", group: "G8" },
   { name: "Joelle N", team: "T3", group: "G8" },
   { name: "Lewis", team: "T3", group: "G8" },
   { name: "Cynthia", team: "T3", group: "G8" },
-  { name: "Nour", team: "T3", group: "G8" },
-  { name: "Alessandro", team: "T3", group: "G8" },
+  { name: "Georges Khalife", team: "T3", group: "G8" },
   // T4
-  { name: "Rita M", team: "T4", group: "G8" },
-  { name: "Sandy", team: "T4", group: "G8" },
-  { name: "Engy", team: "T4", group: "G8" },
-  { name: "Merna", team: "T4", group: "G8" },
-  { name: "Mamdouh", team: "T4", group: "G8" },
-  { name: "Fady", team: "T4", group: "G8" },
-  { name: "Madone", team: "T4", group: "G8" },
-  { name: "Simone", team: "T4", group: "G8" }
+  { name: "Steven", team: "T4", group: "G8" },
+  { name: "Alessandro", team: "T4", group: "G8" },
+  { name: "Charly", team: "T4", group: "G8" },
+  { name: "Jamil", team: "T4", group: "G8" },
+  { name: "Dany Harran", team: "T4", group: "G8" },
 ];
 
 // Combined data
