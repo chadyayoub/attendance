@@ -27,7 +27,7 @@ const g1 = [
   { name: "Rebecca", team: "T3", group: "G1" },
   { name: "Nate", team: "T3", group: "G1" },
   // T4
-  { name: "Jessy A", team: "T4", group: "G1" },
+  { name: "Markella", team: "T4", group: "G1" },
   { name: "Celine AC", team: "T4", group: "G1" },
   { name: "Reine", team: "T4", group: "G1" },
   { name: "Thalia", team: "T4", group: "G1" },
