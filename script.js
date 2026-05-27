@@ -2,21 +2,22 @@
 const g1 = [
   {name: "Yara", team: "G1", group: "G1"},
   // T1
-  { name: "Jana", team: "T1", group: "G1" },
-  { name: "Cinderella", team: "T1", group: "G1" },
-  { name: "Karen", team: "T1", group: "G1" },
-  { name: "Elias S", team: "T1", group: "G1" },
-  { name: "Clara D", team: "T1", group: "G1" },
-  { name: "Peter A", team: "T1", group: "G1" },
+  { name: "Ariana", team: "T1", group: "G1" },
+  { name: "Maria D", team: "T1", group: "G1" },
+  { name: "Raph", team: "T1", group: "G1" },
+  { name: "May", team: "T1", group: "G1" },
   { name: "Joe Elias", team: "T1", group: "G1" },
+  { name: "Roy D", team: "T1", group: "G1" },
+  { name: "Georgina", team: "T1", group: "G1" },
   // T2
-  { name: "Ariana", team: "T2", group: "G1" },
-  { name: "Roy D", team: "T2", group: "G1" },
-  { name: "Raph", team: "T2", group: "G1" },
-  { name: "May", team: "T2", group: "G1" },
-  { name: "Mariam", team: "T2", group: "G1" },
-  { name: "Maria D", team: "T2", group: "G1" },
-  { name: "Georgina", team: "T2", group: "G1" },
+  { name: "Jana", team: "T2", group: "G1" },
+  { name: "Reine", team: "T2", group: "G1" },
+  { name: "Marilyn", team: "T2", group: "G1" },
+  { name: "Clara D", team: "T2", group: "G1" },
+  { name: "Peter A", team: "T2", group: "G1" },
+  { name: "Helena", team: "T2", group: "G1" },
+  { name: "Elias S", team: "T2", group: "G1" },
+
   // T3
   { name: "Johnny", team: "T3", group: "G1" },
   { name: "Carbz", team: "T3", group: "G1" },
@@ -28,12 +29,12 @@ const g1 = [
   { name: "Nate", team: "T3", group: "G1" },
   // T4
   { name: "Markella", team: "T4", group: "G1" },
-  { name: "Celine AC", team: "T4", group: "G1" },
-  { name: "Reine", team: "T4", group: "G1" },
-  { name: "Thalia", team: "T4", group: "G1" },
   { name: "Lynn R", team: "T4", group: "G1" },
-  { name: "Marilyn", team: "T4", group: "G1" },
-  { name: "Helena", team: "T4", group: "G1" }
+  { name: "Karen", team: "T4", group: "G1" },
+  { name: "Thalia", team: "T4", group: "G1" },
+  { name: "Cinderella", team: "T4", group: "G1" },
+  { name: "Celine AC", team: "T4", group: "G1" },
+  { name: "Mariam", team: "T4", group: "G1" },
 ];
 
 const g8 = [
